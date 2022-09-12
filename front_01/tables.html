@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>aula 06</title>
+    <style>
+        td {
+            border: .5px solid black;
+            padding: 8px;
+            text-align: center;
+            word-break: break-all;
+            max-width: 100px;
+        }
+        tr:nth-child(even) {
+            background-color: lightgray;
+        }
+        td:hover {
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div>
+            <h1>aula sobre tabelas</h1>
+        </div>
+        <div>
+            <table>
+                <tr>
+                    <th>nome</th>
+                    <th>sobrenome</th>
+                    <th colspan="2">telefone</th>
+                </tr>
+                <tr contenteditable="">
+                    <td>Alex</td>
+                    <td>Pereira</td>
+                    <td>84 94567854</td>
+                    <td>84 54896554</td>
+                </tr>
+                <tr>
+                    <td>Fulano</td>
+                    <td>De Tal</td>
+                    <td>84 33567811</td>
+                </tr>
+                <tr>
+                    <td>Jhon</td>
+                    <td>Doe</td>
+                    <td>84 66477755</td>
+                </tr>
+            </table>
+        </div>
+
+    </main>
+</body>
+</html>
