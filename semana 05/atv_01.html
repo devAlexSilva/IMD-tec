@@ -1,0 +1,21 @@
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Programação Estruturada</title>
+</head>
+
+<body>
+    <h1>Hora Atual</h1>
+
+    <button onclick='executarExercicio()'>OK</button>
+    <p id="resultado"></p>
+    <script>
+        function executarExercicio() {
+            const date = new Date().toLocaleTimeString("pt-BR")
+            document.getElementById('resultado').innerHTML = date;
+        }
+    </script>
+</body>
+
+</html>

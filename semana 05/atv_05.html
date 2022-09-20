@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>atv 05</title>
+</head>
+
+<body>
+    <h1>atividade 05</h1>
+    <input type="text" id="name" />
+    <button onclick='executarExercicio()'>OK</button>
+    <p id="resultado"></p>
+    <script>
+
+       
+        function executarExercicio() {
+            let name = document.getElementById("name").value
+            const texto = `"Olá ${name}, seja bem-vindo(a) ao sistema aulas do
+Instituto Metrópole Digital."`
+            
+            document.getElementById('resultado').innerHTML = texto;
+        }
+    </script>
+</body>

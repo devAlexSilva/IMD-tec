@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>atv 02</title>
+</head>
+
+<body>
+    <h1>atividade 02</h1>
+
+    <button onclick='executarExercicio()'>OK</button>
+    <p id="resultado"></p>
+    <script>
+
+        /**
+        Data: 15 de Nov de 2021
+        Hora: 09h15
+        */
+        function executarExercicio() {
+            let date = new Date().toString()
+            date = date.slice(4, 21) // sep 20 2022 9:53
+            const day = date.slice(4, 6)
+            const month = date.slice(0, 4)
+            const year = date.slice(7, 11)
+            const time = date.slice(12)
+            
+            const r = `Data: ${day} de ${month} de ${year}<br>
+            Hora: ${time}
+            `
+
+            document.getElementById('resultado').innerHTML = r;
+        }
+    </script>
+</body>
+
+</html>

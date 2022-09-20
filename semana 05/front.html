@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atv 01</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <main>
+        <h1>Cadastro de produtos</h1>
+        <form class="form" action=" https://autoria-form.herokuapp.com/" method="GET">
+            <label for="sku">SKU</label>    
+            <input type="text" id="sku" name="sku"></input>
+            <label for="produto">Produto</label>    
+            <input type="text" id="produto" name="produto"></input>
+            <label for="peso">Peso</label>
+            <input type="number" id="peso" name="peso"></input>
+            <label for="unidade">Unidade</label>
+            <select id="unidade" name="unidade">
+                <option value="grama">grama(g)</option>
+                <option value="quilograma" selected>quilograma(kg)</option>
+                <option value="tonelada">tonelada(t)</option>
+            </select>
+            <label for="largura">Largura (cm)</label>
+            <input type="number" name="largura" id="largura"></input>
+            <label for="altura">Altura (cm)</label>
+            <input type="number" id="altura" name="altura"></input>
+            <label for="profundidade">Profundidade (cm)</label>
+            <input type="number" id="profundidade" name="profundidade"></input>
+            <div class="form-btn">
+                <button>Enviar</button>
+                <button>Limpar</button>
+            </div>
+        </form>
+    </main>
+</body>
+
+</html>

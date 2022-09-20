@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>atv 03</title>
+</head>
+
+<body>
+    <h1>atividade 03</h1>
+
+    <button onclick='executarExercicio()'>OK</button>
+    <p id="resultado"></p>
+    <script>
+
+       
+        function executarExercicio() {
+            const year = new Date(1997, 02, 20).getFullYear()
+            const old = new Date().getFullYear()
+
+            const r = old - year
+            document.getElementById('resultado').innerHTML = r;
+        }
+    </script>
+</body>
