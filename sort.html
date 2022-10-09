@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>arrays 1</title>
+  </head>
+  <body>
+    <h1>Entrada do Programa</h1>
+    <button style="margin-bottom: 20px;" onclick="executarExercicio()">OK</button>
+    <div>
+      <span>Valores lidos: </span>
+      <p id="resultadoLidos"></p>
+      <span>Valores ordenados: </span>
+      <p id="resultadoOrdenados"></p>
+    </div>
+    <script>
+      function executarExercicio() {
+        let vetorLido = [];
+        let vetorOrdenado = [];
+        let exibirLidos = "";
+        let exibirOrdenados = "";
+
+        function comparar(a, b){
+            return a - b;
+        }
+
+        for (let i = 0; i < 10; i++) {
+          vetorLido[i] = Number(prompt("Informe um número"));
+        }
+
+        for (let i = 0; i < vetorLido.length; i++) {
+          let vet = [...vetorLido];
+          vetorOrdenado = vet.sort((a, b) => a-b);
+        }
+
+        for (e of vetorLido) {
+          exibirLidos = exibirLidos + e + "  ";
+        }
+        for (e of vetorOrdenado) {
+          exibirOrdenados = exibirOrdenados + e + " ";
+        }
+
+        document.getElementById("resultadoLidos").innerHTML = exibirLidos;
+        document.getElementById("resultadoOrdenados").innerHTML =
+          exibirOrdenados;
+      }
+    </script>
+  </body>
+</html>

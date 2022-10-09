@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>arrays 2</title>
+  </head>
+  <body>
+    <h1>Entrada do Programa</h1>
+    <button style="margin-bottom: 20px" onclick="executarExercicio()">
+      listar dados
+    </button>
+    <div class="search">
+      <input type="search" id="search" placeholder="filtrar por nome" />
+    </div>
+    <div>
+      <p id="resultado"></p>
+    </div>
+
+    <script>
+      const baseUrl = "https://jsonplaceholder.typicode.com";
+
+      const getAllUsers = async () => {
+        let result = await fetch(baseUrl + "/users", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+
+        return await result.json();
+      };
+
+      async function executarExercicio() {
+        let allUsers = await getAllUsers();
+        let r = "";
+        
+        allUsers.forEach((user) => {
+          r = r + `
+            <p>
+              <span>id: ${user.id}</span>
+              <span>name: ${user.name}</span>
+              <span>username: ${user.username}</span>
+              <span>website: ${user.website}</span>
+            </p>
+          `;
+        });
+
+        const inputSearch = document.getElementById("search");
+        const btnSearch = document.getElementById("btnSearch");
+
+        const data = await getAllUsers();
+        const names = data.map((user) => user.name);
+
+        document.getElementById("resultado").innerHTML = r;
+
+        inputSearch.oninput = () => {
+          r = "";
+          allUsers
+            .filter((user) =>
+              user.name.toLowerCase().includes(inputSearch.value.toLowerCase())
+            )
+            .forEach((user) => {
+              r = r + `
+                <p>
+                  <span>id: ${user.id}</span>
+                  <span>name: ${user.name}</span>
+                  <span>username: ${user.username}</span>
+                  <span>website: ${user.website}</span>
+                </p>
+              `;
+            });
+
+          document.getElementById("resultado").innerHTML = r;
+        };
+      }
+    </script>
+  </body>
+</html>
