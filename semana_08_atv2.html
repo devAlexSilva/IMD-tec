@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <button onclick="exec()">iniciar</button>
+    </div>
+    <main id="main"></main>
+
+    <script>
+      const html = document.getElementById("main");
+      const arr = [];
+
+      function exec() {
+        const numbers = getNumbers()
+        addToHtml(numbers.join(" || "))
+      }
+      function getNumbers() {
+        let num = Number(prompt("digite um numero"));
+        if(num === 0) {
+            return arr;
+        } else {
+            arr.push(num)
+            getNumbers()
+        }
+        return arr
+      }
+      function addToHtml(data) {
+        const div = document.createElement("div");
+        html.innerHTML = "<h2>Os números digitados foram:</h2>";
+        div.innerHTML = data;
+        html.append(div);
+      }
+    </script>
+  </body>
+</html>
