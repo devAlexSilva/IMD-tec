@@ -1,0 +1,70 @@
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Programação Estruturada</title>
+</head>
+
+<body>
+    <h1>Entrada do Programa</h1>
+    N1:<input type="text" id="n1"> <br />
+    N2:<input type="text" id="n2"> <br />
+    N3: <input type="text" id="n3"> <br />
+    <button onclick='executarExercicio()'>OK</button>
+    <p id="resultado"></p>
+    <script>
+        function executarExercicio() {
+            const $ = (refElement) => document.getElementById(refElement);
+            const averageAproved = 7
+            const averageRec = 3
+            
+            function obterValor(id){
+                if (id.trim() === "" || id === undefined) throw new Error("id do elemento é obrigatório")
+                if( $(id) === null) throw new Error("elemento não encontrado")
+                return Number($(id).value);
+            }
+            
+            function calcAverage(n1, n2, n3) {
+                const average = (n1+n2+n3) / 3;
+                if( isNaN(average) ) throw new Error("o valor não é um numero")
+                
+                return average 
+            }
+
+            function verifyResult(average) {
+                const isValidAvearge = average.toPrecision(1)
+
+                if( isValidAvearge < 1 || isValidAvearge > 9) throw new Error("média fora do intervalo permitido");
+                return true;
+            }
+
+            try {
+                const n1 = obterValor("n1")
+                const n2 = obterValor("n2")
+                const n3 = obterValor("n3")
+                //const n3 = obterValor("n4") // --> error de elemento não encontrado
+
+                let result = calcAverage(n1, n2, n3);
+                let resultHtml = ""
+
+                verifyResult(result) // retorna um erro se fora do intervalo fechado 1 a 9
+
+                result = result.toFixed(2)
+
+                if(result < averageRec) {
+                    resultHtml = `Aluno reprovado, pois ficou com média ${result}`; 
+                } else if (result >= averageAproved) {
+                    resultHtml = `Aprovado com média ${result}`;
+                } else {
+                    resultHtml = `Aluno em recuperação, pois a média foi ${result}`;
+                }
+                $('resultado').innerHTML = resultHtml;
+            }
+             catch (err) {
+                $('resultado').innerHTML = err;
+            }
+        }
+    </script>
+</body>
+
+</html>
