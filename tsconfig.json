@@ -1,0 +1,12 @@
+
+{
+    "display": "Node 16",
+  
+    "compilerOptions": {
+      "module": "commonjs",
+      "target": "ES6",
+      "sourceMap": true,
+      "esModuleInterop": true
+  
+      },
+  }

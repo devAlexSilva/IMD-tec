@@ -1,0 +1,25 @@
+{
+  "name": "imd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "atv02.js",
+  "scripts": {
+    "dev": "tsnd --respawn --transpile-only t.ts",
+    "start": "node t.js",
+    "transpile": "tsc t.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devAlexSilva/IMD-tec.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devAlexSilva/IMD-tec/issues"
+  },
+  "homepage": "https://github.com/devAlexSilva/IMD-tec#readme",
+  "dependencies": {
+    "ts-node-dev": "^2.0.0"
+  }
+}
